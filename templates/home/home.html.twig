@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue{% endblock %}
+
+{% block body %}
+
+{% if app.user %} <a href="{{ path('security_logout') }}" class="btn btn-danger">Logout</a> {% endif %}
+
+    <div class="container">
+        <h1 class="text-center">Binevenue sur le site de Jump</h1>
+
+        <main class="mt-5 d-flex flex-column align-items-center">
+            <h3 class="text-center">Veuillez d'abord vous inscrire <br> ou <br> Vous connecter</h3>
+
+            <div class="btn-container">
+                <a href="{{ path('security_register') }}"  class="btn btn-primary">S'inscrire</a>
+                <a href="{{ path('security_login') }}"  class="btn btn-success">Se connecter</a>
+            </div>
+        </main>
+    </div>
+
+    {# <h2>{{ user.name }}</h2> #}
+
+    
+
+{% endblock %}

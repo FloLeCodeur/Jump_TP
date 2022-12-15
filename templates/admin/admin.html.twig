@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Controller{% endblock %}
+
+{% block body %}
+
+    <h1>admin</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Numéro de téléphone</th>
+                <th>Adresse</th>
+                <th>Email</th>
+                <th>Genre</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in all %}
+                <tr>
+                    <td>{{ item.lastname }}</td>
+                    <td>{{ item.firstname }}</td>
+                    <td>{{ item.phoneNumber }}</td>
+                    <td>{{ item.address }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.gender }}</td>
+                    <td><a href="{{ path('app_user', {'_switch_user': item.email} )}}" class="btn btn-sm btn-warning">X</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
